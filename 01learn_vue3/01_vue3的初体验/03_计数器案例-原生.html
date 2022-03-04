@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 class="number"></h2>
+    <button class="addNumber">+1</button>
+    <button class="disNumber">-1</button>
+    <script>
+        let number = document.querySelector('.number')
+        let addNumber = document.querySelector('.addNumber')
+        let disNumber = document.querySelector('.disNumber')
+
+        let counter = 0;
+        number.innerHTML = counter
+
+        addNumber.addEventListener('click',() => {
+            counter += 1
+            number.innerHTML = counter
+        })
+        disNumber.addEventListener('click',() => {
+            counter -= 1
+            number.innerHTML = counter
+        })
+    </script>
+</body>
+</html>

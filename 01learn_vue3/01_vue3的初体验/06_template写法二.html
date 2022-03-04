@@ -1,0 +1,49 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-03-03 10:23:41
+ * @LastEditTime: 2022-03-03 10:28:48
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \vue3\vue3\01learn_vue3\01_vue3的初体验\05_template写法一.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <template id="why">
+        <div>
+            <h1>{{message}}</h1>
+           <h2>{{counter}}</h2>
+           <button @click='addNumber'>+1</button> 
+           <button @click='disNumber'>-1</button> 
+        </div>
+    </template>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        Vue.createApp({
+            template:'#why',
+            data:function () { 
+                return {
+                    message:'Hello World',
+                    counter:0
+                }
+             },
+             //方法
+             methods: {
+                 addNumber(){
+                     this.counter += 1
+                 },
+                 disNumber(){
+                     this.counter -= 1
+                 }
+             },
+        }).mount('#app')
+    </script>
+</body>
+</html>

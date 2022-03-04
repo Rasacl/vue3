@@ -1,0 +1,31 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-02-24 15:10:42
+ * @LastEditTime: 2022-02-24 15:16:30
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE!
+ * @FilePath: \vue3\01learn_vue3\01_vue3的初体验\01_vue3的引入-CDN.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <!-- CDN引入 -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const why = {
+            template:'<h1>hello world</h1>'
+        }
+        // createApp 接收一个对象
+        const app = Vue.createApp(why)
+        //挂载
+        app.mount('#app')
+    </script>
+</body>
+</html>
