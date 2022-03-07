@@ -1,0 +1,45 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-03-07 15:49:46
+ * @LastEditTime: 2022-03-07 15:52:22
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%A
+ * @FilePath: \vue3\03_v-bind和v-on的使用\05_v-bind绑定style-数组语法.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <div id="app"></div>
+    <template id="my-app">
+        <div :style="[styleObj1,styleObj2]">哈哈哈哈</div>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const App = {
+            template:'#my-app',
+            data() {
+                return {
+                    message:'Hello world',
+                    styleObj1:{
+                        color:'red',
+                        fontSize:'20px'
+                    },
+                    styleObj2:{
+                        textDecoration:'underline'
+                    }
+                }
+            },
+        }
+
+        Vue.createApp(App).mount('#app')
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

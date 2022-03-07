@@ -1,10 +1,10 @@
 <!--
  * @Author: your name
- * @Date: 2022-03-04 16:37:52
- * @LastEditTime: 2022-03-07 14:21:10
+ * @Date: 2022-03-07 14:32:07
+ * @LastEditTime: 2022-03-07 14:39:27
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- * @FilePath: \vue3\02_vue3的基本指令\01_Mustance语法.html
+ * @FilePath: \vue3\02_vue3的基本指令\02_基本指令-vue-once.html
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -15,17 +15,13 @@
     <title>Document</title>
     <div id="app"></div>
     <template id="my-app">
-        <!-- 1 mustache语法 -->
-        <h2>{{message}}</h2>
-        <!-- 2 表达式 -->
-    <h2>{{counter *2}}</h2>
-    <h2>{{message.split('').reverse().join('')}}</h2>
-    <!-- 3 也可以是表达式 -->
-    <!-- 也可以使用computed（计算属性） -->
-    <h2>{{getBth()}}</h2>
-    <!-- 三元运算符 -->
-    <h2>{{isShow?"哈哈哈哈":""}}</h2>
-    <button @click="toggle">切换</button>
+        <h2>{{counter}}</h2>
+        
+        <div v-once>
+            <h2>{{counter}}</h2>
+            <h2>{{message}}</h2>
+        </div>
+        <button @click="increment">+1</button>
     </template>
 
     <script src="../js/vue.js"></script>
@@ -36,15 +32,11 @@
                 return {
                     message:'Hello world',
                     counter:100,
-                    isShow:true
                 }
             },
             methods: {
-                getBth(){
-                    return this.message.split("").reverse().join("")
-                },
-                toggle(){
-                    this.isShow = !this.isShow
+                increment(){
+                    this.counter++
                 }
             },
         }

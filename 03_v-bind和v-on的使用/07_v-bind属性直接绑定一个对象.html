@@ -1,0 +1,44 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-03-07 15:58:21
+ * @LastEditTime: 2022-03-07 16:28:10
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \vue3\03_v-bind和v-on的使用\07_v-bind属性直接绑定一个对象.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <div id="app"></div>
+    <template id="my-app">
+        <div v-bind="info">哈哈哈哈</div>
+        <!-- 不推荐 -->
+        <div :="info">哈哈哈哈</div>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const App = {
+            template:'#my-app',
+            data() {
+                return {
+                   info:{
+                       name:'why',
+                       age:13,
+                       height:1.88
+                   }
+                }
+            },
+        }
+
+        Vue.createApp(App).mount('#app')
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-03-07 14:59:48
+ * @LastEditTime: 2022-03-07 15:05:33
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \vue3\03_v-bind和v-on的使用\01_v-bind的基本使用.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <div id="app"></div>
+    <!-- vue2 template模板中只能有一个根元素 -->
+    <!-- vue3 是允许template中有很多个根元素的 -->
+    <template id="my-app">
+        <!-- v-bind指令基本使用 -->
+        <img v-bind:src="imgUrl" alt="" srcset="">
+        <a v-bind:href="link">百度</a>
+
+        <!-- 2 v-bind提供了一个语法糖 -->
+        <a :href="link">百度</a>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const App = {
+            template:'#my-app',
+            data() {
+                return {
+                    message:'Hello world',
+                    imgUrl:'',
+                    link:'http://www.baidu.com'
+                }
+            },
+        }
+
+        Vue.createApp(App).mount('#app')
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

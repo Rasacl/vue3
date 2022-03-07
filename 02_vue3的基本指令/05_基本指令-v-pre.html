@@ -1,0 +1,38 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-03-07 14:50:28
+ * @LastEditTime: 2022-03-07 14:50:29
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \vue3\02_vue3的基本指令\05_基本指令-v-pre.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <div id="app"></div>
+    <template id="my-app">
+        <h2 v-pre>{{message}}</h2>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const App = {
+            template:'#my-app',
+            data() {
+                return {
+                    message:'Hello world'
+                }
+            },
+        }
+
+        Vue.createApp(App).mount('#app')
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
