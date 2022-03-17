@@ -1,0 +1,49 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-03-16 16:11:31
+ * @LastEditTime: 2022-03-16 16:54:35
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \vue3\05_列表渲染\02_v-for和template.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <div id="app"></div>
+    <template id="my-app">
+       <ul>
+           <template v-for="(value,key) in info">
+               <li>{{key}}</li>
+               <li>{{value}}</li>
+               <li class="divider"></li>
+           </template>
+       </ul>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const App = {
+            template:'#my-app',
+            data() {
+                return {
+                    message:'Hello world',
+                    info:{
+                        name:'why',
+                        age:17,
+                        height:1.88
+                    }
+                }
+            },
+        }
+
+        Vue.createApp(App).mount('#app')
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
