@@ -1,0 +1,64 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-03-18 14:38:43
+ * @LastEditTime: 2022-03-18 14:38:43
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \vue3\08_综合案例\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <div id="app"></div>
+    <template id="my-app">
+        <template v-if="books.length > 0">
+            <table>
+                <thead>
+                    <th></th>
+                    <th>书籍名称</th>
+                    <th>出版日期</th>
+                    <th>价格</th>
+                    <th>购买数量</th>
+                    <th>操作</th>
+                </thead>
+                <tbody>
+                    <tr v-for="(book,index) in books">
+                        <td>{{index+1}}</td>
+                        <td>{{book.name}}</td>
+                        <td>{{book.date}}</td>
+                        <td>{{book.price}}</td>
+                        <td>
+                            <button :disabled="book.count <= 1" @click="countIec(index)">-</button>
+                            {{book.count}}
+                            <button @click="countAdd(index)">+</button>
+                        </td>
+                        <td>
+                            <button @click="del(index)">移除</button>
+                        </td>
+      
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+                总价格：{{formatPrice(totalPrice)}} 
+
+        </div>
+        </template>
+        <template v-else>
+           购物车为空~~~
+        </template>
+     
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script src="./index.js"></script>
+</head>
+<body>
+    
+</body>
+</html>
